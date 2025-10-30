@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="js/client.js"></script>
+    <title>WasteLesss Project - Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      // Check if the user is logged in
+      const token = localStorage.getItem("authToken");
+    
+      if (!token) {
+        // Redirect to the login page if no token is found
+        window.location.href = "./login.html";
+      }
+    </script>
+    <script src="/js/global.js"></script>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a class="active" href="./login.html">Login</a>
+      <a class="active" href="./index.html">Home</a>
+      <a class="active" href="./inventory.html">Inventory</a>
+      <a class="active" href="./companyDivision.html">Company Division</a>
+      <a class="active" href="./vendor.html">Vendors</a>
+      <a class="active" href="./agingInventory.html">Aging Inventory</a>
+      <a class="active" href="./customer.html">Customer</a>
+      <a class="active" href="./order.html">Order</a>
+      <a class="active" href="./orderItems.html">Order Items</a>
+      <a class="active" href="./location.html">Location</a>
+      <a class="active" href="./shipping.html">Shipping</a>
+      <button id="logout" class="logout-btn">Logout</button>
+      <span id="username-display" class="username-display"></span>
+
+    </div>
+    <br />
+    <h1>
+      Home page for Group C WasteLesss Project - CSCI441 Software Engineering
+    </h1>
+  </body>
+</html>

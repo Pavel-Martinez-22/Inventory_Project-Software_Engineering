@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="js/client.js"></script>
+    <title>WasteLesss Project - Unauthorized</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="/js/global.js"></script>
+    <script>
+        // Check if the user is logged in
+        const token = localStorage.getItem("authToken");
+      
+        if (!token) {
+          // Redirect to the login page if no token is found
+          window.location.href = "./login.html";
+        }
+      </script>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a class="active" href="./login.html">Login</a>
+      <a class="active" href="./index.html">Home</a>
+      <button id="logout" class="logout-btn">Logout</button>
+      <span id="username-display" class="username-display"></span>
+
+    </div>
+    <br />
+    <h1>Access Denied</h1>
+    <p>You do not have permission to access this page.</p>
+    <p>Please contact your administrator if you believe this is an error.</p>
+  </body>
+</html>

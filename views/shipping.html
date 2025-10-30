@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WasteLesss Project - Shippers</title>
+    <script defer src="js/shipping.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      // Check if the user is logged in
+      const token = localStorage.getItem("authToken");
+    
+      if (!token) {
+        // Redirect to the login page if no token is found
+        window.location.href = "./login.html";
+      }
+    </script>
+    <script src="/js/global.js"></script>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a class="active" href="./login.html">Login</a>
+      <a class="active" href="./index.html">Home</a>
+      <a class="active" href="./inventory.html">Inventory</a>
+      <a class="active" href="./companyDivision.html">Company Division</a>
+      <a class="active" href="./vendor.html">Vendors</a>
+      <a class="active" href="./agingInventory.html">Aging Inventory</a>
+      <a class="active" href="./customer.html">Customer</a>
+      <a class="active" href="./order.html">Order</a>
+      <a class="active" href="./orderItems.html">Order Items</a>
+      <a class="active" href="./location.html">Location</a>
+      <a class="active" href="./shipping.html">Shipping</a>
+      <button id="logout" class="logout-btn">Logout</button>
+      <span id="username-display" class="username-display"></span>
+    </div>
+    <br />
+    <div class="wrapper">
+      <button id="getShipper" class="btn">Get Shippers</button>
+      <div id="output"></div>
+      <br />
+
+      <h2>Shippers</h2>
+      <form id="shippingForm" class="shipping-form">
+        <div class="input-box"><label for="shippingid">Shipper ID (for update only):</label><input type="number" id="shippingid"/></div>
+        <div class="input-box"><label for="carriername">Carrier Name:</label><input type="text" id="carriername" required/></div>
+        <div class="input-box"><label for="trackingnumber">Tracking Number:</label><input type="text" id="trackingnumber" required /></div>
+        <div class="input-box"><label for="vendorid">Vendor ID (mandatory for update):</label><input type="number" id="vendorid" required /></div>
+        <div class="input-box"><label for="estimateddeliverydate">Estimated Delivery Date:</label><input type="date" id="estimateddeliverydate" required /></div>
+        <button type="submit" class="btn" id="addUpdateBtn">Add Shipper</button>
+        <br/>
+        <br/>
+        <button type="button" class="btn" id="patchBtn">Update Shipper</button>      
+      </form>
+
+      <div id="postResult"></div>
+      <br />
+      <!-- Delete Shipping Section -->
+      <h2>Delete Shipper</h2> 
+      <form id="deleteShippingForm" class="deleteShipping-form">
+      <div class="input-box">
+      <label for="deleteShippingId">Shipping ID (for delete only):</label>
+      <input type="number" id="deleteShippingId" />
+      </div>
+      <br/>
+      <button type="submit" class="btn">Delete Shipper</button>
+    </form>
+    <br/>
+    <div id="deleteResult"></div>
+    <br />
+    </div>
+  </body>
+</html>

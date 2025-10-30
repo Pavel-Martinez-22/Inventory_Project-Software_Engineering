@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WasteLesss Project - Customer</title>
+    <script defer src="js/customer.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      // Check if the user is logged in
+      const token = localStorage.getItem("authToken");
+    
+      if (!token) {
+        // Redirect to the login page if no token is found
+        window.location.href = "./login.html";
+      }
+    </script>
+    <script src="/js/global.js"></script>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a class="active" href="./login.html">Login</a>
+      <a class="active" href="./index.html">Home</a>
+      <a class="active" href="./inventory.html">Inventory</a>
+      <a class="active" href="./companyDivision.html">Company Division</a>
+      <a class="active" href="./vendor.html">Vendors</a>
+      <a class="active" href="./agingInventory.html">Aging Inventory</a>
+      <a class="active" href="./customer.html">Customer</a>
+      <a class="active" href="./order.html">Order</a>
+      <a class="active" href="./orderItems.html">Order Items</a>
+      <a class="active" href="./location.html">Location</a>
+      <a class="active" href="./shipping.html">Shipping</a>
+      <button id="logout" class="logout-btn">Logout</button>
+      <span id="username-display" class="username-display"></span>
+    </div>
+    <br />
+    <div class="wrapper">
+      <button id="getCustomer" class="btn">Get Customer</button>
+      <div id="output"></div>
+      <br />
+
+      <h2>Customer</h2>
+      <form id="customerForm" class="customer-form">
+        <div class="input-box">
+          <label for="customerid">Customer ID (for update only):</label><input type="number" id="customerid"/></div>
+        <div class="input-box"><label for="customername">Customer Name:</label><input type="text" id="customername" required/></div>
+        <div class="input-box"><label for="email">Email:</label><input type="text" id="email" required /></div>
+        <div class="input-box"><label for="phone">Phone:</label><input type="text" id="phone" required /></div>
+        <div class="input-box"><label for="address">Address:</label><input type="text" id="address" required /></div>
+        <button type="submit" class="btn" id="addUpdateBtn">Add Customer</button>
+        <br/>
+        <br/>
+        <button type="button" class="btn" id="patchBtn">Update Customer</button>      
+      </form>
+
+      <div id="postResult"></div>
+      <br />
+      <!-- Delete Customer Section -->
+      <h2>Delete Customer</h2> 
+      <form id="deleteCustomerForm" class="deleteCustomer-form">
+      <div class="input-box">
+      <label for="deleteCustomerId">Customer ID (for delete only):</label>
+      <input type="number" id="deleteCustomerId" />
+      </div>
+      <br/>
+      <button type="submit" class="btn">Delete Customer</button>
+    </form>
+    <br/>
+    <div id="deleteResult"></div>
+    <br />
+    </div>
+  </body>
+</html>

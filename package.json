@@ -1,0 +1,30 @@
+{
+  "name": "javascript-classes",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon --env-file=.env server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^7.0.10",
+    "pg": "^8.14.1",
+    "uuid": "^11.1.0",
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

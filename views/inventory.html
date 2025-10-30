@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="js/inventory.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>WasteLesss Project - Inventory</title>
+    <script>
+      // Check if the user is logged in
+      const token = localStorage.getItem("authToken");
+    
+      if (!token) {
+        // Redirect to the login page if no token is found
+        window.location.href = "./login.html";
+      }
+    </script>
+    <script src="/js/global.js"></script>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a class="active" href="./login.html">Login</a>
+      <a class="active" href="./index.html">Home</a>
+      <a class="active" href="./inventory.html">Inventory</a>
+      <a class="active" href="./companyDivision.html">Company Division</a>
+      <a class="active" href="./vendor.html">Vendors</a>
+      <a class="active" href="./agingInventory.html">Aging Inventory</a>
+      <a class="active" href="./customer.html">Customer</a>
+      <a class="active" href="./order.html">Order</a>
+      <a class="active" href="./orderItems.html">Order Items</a>
+      <a class="active" href="./location.html">Location</a>
+      <a class="active" href="./shipping.html">Shipping</a>
+      <button id="logout" class="logout-btn">Logout</button>
+      <span id="username-display" class="username-display"></span>
+    </div>
+    <br />
+      <div class="wrapper">
+        <!-- Get Inventory section -->
+          <button id="getInventory" class="btn">Get Inventory</button>
+          <div id="output"></div>
+          <br />
+
+          <!-- Get Alerts section --> <!-- Janelle adding for alert testing -->
+   <button id="getAlerts" class="btn">Get Alerts</button>
+   <div id="alertsOutput"></div>
+   <br />
+<!-- Clear Alerts section --> <!-- Janelle adding for alert clearing -->
+<button id="clearAlerts" class="btn">Clear All Alerts</button>
+<div id="clearAlertsOutput"></div>
+<br />
+
+        
+      
+
+          <!-- PUT Inventory Section -->
+          <h2>Manage Inventory</h2> 
+          <form id="inventoryForm" class="inventory-form">
+            <div class="input-box"><label for="itemid">Item ID (for update only):</label><input type="number" id="itemid"/></div>
+            <div class="input-box"><label for="name">Name:</label><input type="text" id="name" required /></div>
+            <div class="input-box"><label for="sku">SKU:</label><input type="text" id="sku" required /></div>
+            <div class="input-box"><label for="batchnumber">Batch Number:</label><input type="text" id="batchnumber" required /></div>
+            <div class="input-box"><label for="category">Category:</label><input type="text" id="category" required /></div>
+            <div class="input-box"><label for="processedstatus">Processed Status:</label><input type="text" id="processedstatus" required /></div>
+            <div class="input-box"><label for="receiveddate">Received Date:</label><input type="date" id="receiveddate" required /></div>
+            <div class="input-box"><label for="expirationdate">Expiration Date (optional):</label><input type="date" id="expirationdate" /></div>
+            <div class="input-box"><label for="locationid">Location ID:</label><input type="number" id="locationid" required /></div>
+            <div class="input-box"><label for="isperishable">Is Perishable:</label>
+              <select id="isperishable">
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+              </select>
+            </div>
+            <div class="input-box"><label for="shelflifedays">Shelf-life Days:</label><input type="number" id="shelflifedays" required /></div>
+            <div class="input-box"><label for="alertthresholddays">Alert Threshold Days:</label><input type="number" id="alertthresholddays" required /></div>
+            <div class="input-box"><label for="storagespacerequired">Storage Space Required:</label><input type="number" id="storagespacerequired" required /></div>
+            <div class="input-box"><label for="department">Department:</label><input type="text" id="department" required /></div>
+            <div class="input-box"><label for="timestampreceived">Timestamp Received (optional):</label><input type="datetime-local" id="timestampreceived" /></div>
+            <div class="input-box"><label for="demand">Demand:</label><input type="number" id="demand" required /></div>
+            <div class="input-box"><label for="orderingcost">Ordering Cost:</label><input type="number" step="0.01" id="orderingcost" required /></div>
+            <div class="input-box"><label for="holdingcostperyear">Holding Cost per Year:</label><input type="number" step="0.01" id="holdingcostperyear" required /></div>
+      
+            <button type="submit" class="btn" id="addUpdateBtn">Add Product</button>
+            <br/>
+            <br/>
+            <button type="button" class="btn" id="patchBtn">Update Product</button>
+          </form>
+          <br/>
+          <div id="postResult"></div>
+          <br />
+
+          <!-- Delete Inventory Section -->
+          <h2>Delete Inventory</h2> 
+          <form id="deleteInventoryForm" class="deleteInventory-form">
+            <div class="input-box">
+              <label for="deleteItemID">Item ID (for delete only):</label>
+              <input type="number" id="deleteItemID" />
+            </div>
+            <br/>
+            <button type="submit" class="btn">Delete Product</button>
+          </form>
+          <br/>
+          <div id="deleteResult"></div>
+          <br />
+      </div>
+
+      <!-- Alert Modal -->
+<div id="alertModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999;">
+  <div style="background:white; padding:20px; max-width:500px; margin:10% auto; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+    <h2>Inventory Alerts</h2>
+    <ul id="alertList"></ul>
+    <button onclick="closeAlertModal()" style="margin-top:10px;">Close</button>
+  </div>
+</div>
+
+    </body>
+    </html>
+    

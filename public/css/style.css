@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier;
+}
+
+body {
+  /*
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+*/
+  background: rgb(206, 143, 208);
+}
+
+.wrapper {
+  /*
+    width: 420px;
+    background: purple;
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    padding: 0.5rem calc((100vw - 1200px) / 2);
+    padding: 70px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+*/
+  margin: 0;
+  position: absolute;
+  /*top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  */
+  top: 100px; /* Push it down a fixed amount from the topnav */
+  left: 50%;
+  transform: translateX(-50%); /* Only horizontally center it */
+  color: #fff;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+  color: #fff;
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.wrapper .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+  accent-color: #fff;
+  margin-right: 3px;
+}
+
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+.wrapper .btn {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.register-link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link p a:hover {
+  text-decoration: underline;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #9700ab;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a.active {
+  background-color: #9700ab;
+  color: white;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.logout-btn {
+  float: right;
+  background-color: #9700ab;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border: none; /* Removes the border */
+}
+
+.logout-btn:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.username-display {
+  float: right;
+  background-color: #9700ab;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border: none; /* Removes the border */
+  margin-right: 15px; /* Adds space to the right */
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.inventory-table th, .inventory-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.inventory-table th {
+  background-color: #9700ab;
+  font-weight: bold;
+}
+
+.company-division-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.company-division-table th, .company-division-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.company-division-table th {
+  background-color: #9700ab;
+  font-weight: bold;
+}
+
+.vendor-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.vendor-table th, .vendor-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.vendor-table th {
+  background-color: #9700ab;
+  font-weight: bold;
+}
+
+.Aging-Inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.Aging-Inventory-table th, .Aging-Inventory-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.Aging-Inventory-table th {
+  background-color: #9700ab;
+  font-weight: bold;
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.customer-table th, .customer-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.customer-table th {
+  background-color: #9700ab;
+  font-weight: bold;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.order-table th, .order-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.order-table th {
+  background-color: #9700ab;
+  font-weight: bold;
+}
+
+.location-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.location-table th, .location-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.location-table th {
+  background-color: #9700ab;
+  font-weight: bold;
+}
+
+.orderItems-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.orderItems-table th, .orderItems-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.orderItems-table th {
+  background-color: #9700ab;
+  font-weight: bold;
+}
+
+.shipping-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.shipping-table th, .shipping-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.shipping-table th {
+  background-color: #9700ab;
+  font-weight: bold;
+}

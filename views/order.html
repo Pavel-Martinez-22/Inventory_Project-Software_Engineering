@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WasteLesss Project - Order</title>
+    <script defer src="js/order.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      // Check if the user is logged in
+      const token = localStorage.getItem("authToken");
+    
+      if (!token) {
+        // Redirect to the login page if no token is found
+        window.location.href = "./login.html";
+      }
+    </script>
+    <script src="/js/global.js"></script>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a class="active" href="./login.html">Login</a>
+      <a class="active" href="./index.html">Home</a>
+      <a class="active" href="./inventory.html">Inventory</a>
+      <a class="active" href="./companyDivision.html">Company Division</a>
+      <a class="active" href="./vendor.html">Vendors</a>
+      <a class="active" href="./agingInventory.html">Aging Inventory</a>
+      <a class="active" href="./customer.html">Customer</a>
+      <a class="active" href="./order.html">Order</a>
+      <a class="active" href="./orderItems.html">Order Items</a>
+      <a class="active" href="./location.html">Location</a>
+      <a class="active" href="./shipping.html">Shipping</a>
+      <button id="logout" class="logout-btn">Logout</button>
+      <span id="username-display" class="username-display"></span>
+    </div>
+    <br />
+    <div class="wrapper">
+      <button id="getOrder" class="btn">Get Order</button>
+      <div id="output"></div>
+      <br />
+
+      <h2>Orders</h2>
+      <form id="orderForm" class="order-form">
+        <div class="input-box">
+          <label for="orderid">Order ID (for update only):</label><input type="number" id="orderid"/></div>
+        <div class="input-box"><label for="customerid">Customer ID:</label><input type="text" id="customerid" required/></div>
+        <div class="input-box"><label for="orderdate">Order Date:</label><input type="text" id="orderdate" required /></div>
+        <div class="input-box"><label for="shippingstatus">Shipping Status:</label><input type="text" id="shippingstatus" required /></div>
+        <button type="submit" class="btn" id="addUpdateBtn">Add Order</button>
+        <br/>
+        <br/>
+        <button type="button" class="btn" id="patchBtn">Update Order</button>      
+      </form>
+
+      <div id="postResult"></div>
+      <br />
+      <!-- Delete Order Section -->
+      <h2>Delete Order</h2> 
+      <form id="deleteOrderForm" class="deleteOrder-form">
+      <div class="input-box">
+      <label for="deleteOrderId">Order ID (for delete only):</label>
+      <input type="number" id="deleteOrderId" />
+      </div>
+      <br/>
+      <button type="submit" class="btn">Delete Order</button>
+    </form>
+    <br/>
+    <div id="deleteResult"></div>
+    <br />
+    </div>
+  </body>
+</html>
