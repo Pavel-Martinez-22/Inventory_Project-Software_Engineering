@@ -12,14 +12,14 @@ body {
     align-items: center;
     min-height: 100vh;
 */
-  background: rgb(206, 143, 208);
+  background: rgb(102,51,153)
 }
 
 .wrapper {
   /*
     width: 420px;
     background: purple;
-    color: #fff;
+    color: rgb(230,230,250);
     border-radius: 10px;
     padding: 30px 40px;
 
@@ -42,7 +42,7 @@ body {
   top: 100px; /* Push it down a fixed amount from the topnav */
   left: 50%;
   transform: translateX(-50%); /* Only horizontally center it */
-  color: #fff;
+  color: rgb(230,230,250);
 }
 
 .wrapper h1 {
@@ -66,12 +66,12 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
   font-size: 16px;
-  color: #fff;
+  color: rgb(230,230,250);
   padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder {
-  color: #fff;
+  color: rgb(230,230,250);
 }
 
 .input-box i {
@@ -90,12 +90,12 @@ body {
 }
 
 .remember-forgot label input {
-  accent-color: #fff;
+  accent-color: rgb(230,230,250);
   margin-right: 3px;
 }
 
 .remember-forgot a {
-  color: #fff;
+  color: rgb(230,230,250);
   text-decoration: none;
 }
 
@@ -117,6 +117,12 @@ body {
   font-weight: 600;
 }
 
+.wrapper .btn:hover {
+  background: #333;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
 .wrapper .register-link {
   font-size: 14.5px;
   text-align: center;
@@ -124,7 +130,7 @@ body {
 }
 
 .register-link p a {
-  color: #fff;
+  color: rgb(230,230,250);
   text-decoration: none;
   font-weight: 600;
 }
@@ -135,7 +141,7 @@ body {
 
 .topnav {
   overflow: hidden;
-  background-color: #9700ab;
+  background-color: rgb(147,112,219);
 }
 
 .topnav a {
@@ -148,19 +154,19 @@ body {
 }
 
 .topnav a.active {
-  background-color: #9700ab;
-  color: white;
+  background-color: rgb(147,112,219);
+  color: rgb(230,230,250);
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: rgb(230,230,250);
   color: black;
 }
 
 .logout-btn {
   float: right;
-  background-color: #9700ab;
-  color: white;
+  background-color: rgb(147,112,219);
+  color: rgb(230,230,250);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -175,8 +181,8 @@ body {
 
 .username-display {
   float: right;
-  background-color: #9700ab;
-  color: white;
+  background-color: rgb(147,112,219);
+  color: rgb(230,230,250);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -198,7 +204,7 @@ body {
 }
 
 .inventory-table th {
-  background-color: #9700ab;
+  background-color: rgb(147,112,219);
   font-weight: bold;
 }
 
@@ -215,7 +221,7 @@ body {
 }
 
 .company-division-table th {
-  background-color: #9700ab;
+  background-color: rgb(147,112,219);
   font-weight: bold;
 }
 
@@ -232,7 +238,7 @@ body {
 }
 
 .vendor-table th {
-  background-color: #9700ab;
+  background-color: rgb(147,112,219);
   font-weight: bold;
 }
 
@@ -249,7 +255,7 @@ body {
 }
 
 .Aging-Inventory-table th {
-  background-color: #9700ab;
+  background-color: rgb(147,112,219);
   font-weight: bold;
 }
 
@@ -266,7 +272,7 @@ body {
 }
 
 .customer-table th {
-  background-color: #9700ab;
+  background-color: rgb(147,112,219);
   font-weight: bold;
 }
 
@@ -283,7 +289,7 @@ body {
 }
 
 .order-table th {
-  background-color: #9700ab;
+  background-color: rgb(147,112,219);
   font-weight: bold;
 }
 
@@ -300,7 +306,7 @@ body {
 }
 
 .location-table th {
-  background-color: #9700ab;
+  background-color: rgb(147,112,219);
   font-weight: bold;
 }
 
@@ -317,7 +323,7 @@ body {
 }
 
 .orderItems-table th {
-  background-color: #9700ab;
+  background-color: rgb(147,112,219);
   font-weight: bold;
 }
 
@@ -334,6 +340,6 @@ body {
 }
 
 .shipping-table th {
-  background-color: #9700ab;
+  background-color: rgb(147,112,219);
   font-weight: bold;
 }
