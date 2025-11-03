@@ -6,15 +6,16 @@
 }
 
 body {
-  /*
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-*/
   background: rgb(102,51,153)
 }
+.home {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
 
+    color: rgb(230,230,250);
+}
 .wrapper {
   /*
     width: 420px;
