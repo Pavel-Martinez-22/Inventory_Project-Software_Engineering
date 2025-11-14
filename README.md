@@ -2,9 +2,9 @@
 <p>Class: Software engineering </p>
 <p>Username: Guest</p>
 <p>password: 123Guest</p>
-<p>Inventory Management System Project</p>
+<p>Project Titel: Inventory Management System Project</p>
 <p>
-  This project is in collaboration with a team of four developers across three time
+  Description: This project is in collaboration with a team of four developers across three time
   zones to build an inventory management system. We coordinated through scheduled
   meetings and used Git for version control and seamless code integration. Our system
   featured a custom RESTful API built with Node.js and Express, supporting full CRUD
